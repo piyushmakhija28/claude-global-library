@@ -1,5 +1,7 @@
 ---
 name: docker
+version: 1.0.0
+last-updated: 2026-02-18
 description: Docker expert for designing, building, optimizing, securing Dockerfiles, Compose files, CI/CD integration, troubleshooting containers. Use when user mentions Docker, Dockerfile, containerize, optimize image, secure Docker, docker-compose, or related tasks like "dockerize my app", "fix Docker build", "multi-stage Dockerfile".
 allowed-tools: Read,Glob,Grep,Bash
 user-invocable: true

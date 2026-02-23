@@ -1,5 +1,7 @@
 ---
 name: jenkins-pipeline
+version: 1.0.0
+last-updated: 2026-02-18
 description: Jenkins Pipeline Orchestrator for CI/CD pipelines with Docker/K8s integration. Use for \"Jenkins pipeline\", \"Jenkinsfile\", \"CI/CD Jenkins\", \"deploy Jenkins Docker/K8s\".
 allowed-tools: Read,Glob,Grep,Bash,AskUserQuestion
 user-invocable: true

@@ -1,5 +1,7 @@
 ---
 name: java-spring-boot-microservices
+version: 1.0.0
+last-updated: 2026-02-18
 description: Java Spring Boot microservices expert for code gen, architecture, security, DB integration (RDBMS/NoSQL). Use for "Spring Boot microservice", "REST API Spring", "JWT auth", "Spring Data JPA", "microservices Eureka".
 allowed-tools: Read,Glob,Grep,Bash,Edit,Write
 user-invocable: true

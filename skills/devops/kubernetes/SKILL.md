@@ -1,5 +1,7 @@
 ---
 name: kubernetes
+version: 1.0.0
+last-updated: 2026-02-18
 description: Kubernetes expert DevOps engineer for designing, deploying, securing, scaling, and troubleshooting production-grade K8s clusters and workloads. Use for "Kubernetes deploy", "K8s cluster", "helm chart", "kubectl".
 allowed-tools: Read,Glob,Grep,Bash,Edit,Write
 user-invocable: true

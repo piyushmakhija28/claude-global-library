@@ -1,5 +1,7 @@
 ---
 name: rdbms-core
+version: 1.0.0
+last-updated: 2026-02-18
 description: RDBMS expert for schema design, SQL queries (PostgreSQL/MySQL), indexing, optimization, transactions. Use for "write SQL query", "design database schema", "optimize query", "PostgreSQL table", "MySQL index".
 allowed-tools: Read,Glob,Grep,Bash
 user-invocable: true
