@@ -1,0 +1,146 @@
+AGENTS LIBRARY
+==============
+
+Version: 1.0.0
+Last Updated: 2026-02-18
+Status: Stable
+
+---
+
+SUMMARY
+-------
+
+Total Agents: 12
+
+By Type:
+- Mobile Development:  4 agents
+- Web Development:     2 agents
+- Backend Development: 1 agent
+- DevOps:              1 agent
+- SEO:                 2 agents
+- Quality Assurance:   1 agent
+- Orchestration:       1 agent
+
+---
+
+MOBILE DEVELOPMENT AGENTS (4)
+-----------------------------
+
+1. android-backend-engineer
+   - Purpose: Android backend integration, API connectivity
+   - Tech: Kotlin, Retrofit, Room, Hilt
+
+2. android-ui-designer
+   - Purpose: Android UI/UX implementation
+   - Tech: Jetpack Compose, XML layouts, Material Design
+
+3. swift-backend-engineer
+   - Purpose: iOS backend integration, API connectivity
+   - Tech: Swift, URLSession, Core Data, Combine
+
+4. swiftui-designer
+   - Purpose: iOS UI/UX implementation
+   - Tech: SwiftUI, UIKit, Apple Design Guidelines
+
+---
+
+WEB DEVELOPMENT AGENTS (2)
+--------------------------
+
+5. angular-engineer
+   - Purpose: Angular frontend development
+   - Tech: Angular, TypeScript, RxJS, NgRx
+
+6. ui-ux-designer
+   - Purpose: UI/UX design and prototyping
+   - Tech: Figma, Adobe XD, Design Systems
+
+---
+
+BACKEND DEVELOPMENT AGENTS (1)
+------------------------------
+
+7. spring-boot-microservices
+   - Purpose: Complex Spring Boot microservice development
+   - Tech: Spring Boot, JPA, Security, Cloud
+
+---
+
+DEVOPS AGENTS (1)
+-----------------
+
+8. devops-engineer
+   - Purpose: CI/CD, containerization, deployment
+   - Tech: Docker, Kubernetes, Jenkins, Nginx
+
+---
+
+SEO AGENTS (2)
+--------------
+
+9. dynamic-seo-agent
+   - Purpose: Dynamic SEO optimization for SPAs/SSR
+   - Tech: Schema markup, meta tags, sitemap generation
+
+10. static-seo-agent
+    - Purpose: Static content SEO optimization
+    - Tech: Content optimization, keyword research
+
+---
+
+QUALITY ASSURANCE AGENTS (1)
+----------------------------
+
+11. qa-testing-agent
+    - Purpose: Test automation, quality assurance
+    - Tech: JUnit, Selenium, Postman, load testing
+
+---
+
+ORCHESTRATION AGENTS (1)
+------------------------
+
+12. orchestrator-agent
+    - Purpose: Multi-agent coordination, complex task management
+    - Tech: Agent communication, task delegation, result merging
+
+---
+
+AGENT STRUCTURE
+---------------
+
+Each agent folder should contain:
+```
+agent-name/
+├── agent.md       # Main agent configuration (required)
+├── README.md      # Agent documentation
+└── *.md           # Additional resources (optional)
+```
+
+---
+
+AGENT VS SKILL
+--------------
+
+| Feature        | Skill                    | Agent                     |
+|----------------|--------------------------|---------------------------|
+| Purpose        | Knowledge/patterns       | Autonomous execution      |
+| Task Nature    | Guidance/rules/patterns  | Multi-step workflow       |
+| Mode           | Assists Claude           | Acts independently        |
+| Best For       | Any task needing guidance | Autonomous complex tasks  |
+| Example        | "Add database query"     | "Build entire service"    |
+| Selection      | ALWAYS invoke on match   | ALWAYS invoke on match    |
+
+---
+
+VERSION HISTORY
+---------------
+
+| Version | Date       | Changes                              |
+|---------|------------|--------------------------------------|
+| 1.0.0   | 2026-02-18 | Initial versioning, 12 agents listed |
+
+---
+
+Location: ~/.claude/agents/
+Last Updated: 2026-02-18

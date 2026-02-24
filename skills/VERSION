@@ -1,0 +1,138 @@
+SKILLS LIBRARY
+==============
+
+Version: 1.0.0
+Last Updated: 2026-02-18
+Status: Stable
+
+---
+
+SUMMARY
+-------
+
+Total Skills: 28
+
+By Category:
+- Backend:      8 skills
+- Frontend:     6 skills
+- Mobile:       3 skills
+- DevOps:       3 skills
+- Desktop:      1 skill
+- Intelligence: 7 skills (root level)
+
+---
+
+BACKEND SKILLS (8)
+------------------
+Location: ~/.claude/skills/backend/
+
+1. java-spring-boot-microservices  - Spring Boot microservices, REST APIs, security
+2. java-design-patterns-core       - Design patterns in Java applications
+3. spring-boot-design-patterns-core - Spring Boot-specific design patterns
+4. rdbms-core                      - PostgreSQL/MySQL schema design, queries
+5. nosql-core                      - MongoDB, Elasticsearch patterns
+6. payment-integration             - Payment gateway integration (Stripe, Razorpay)
+7. json-core                       - JSON handling and processing
+8. swift-backend-core              - Swift backend development
+
+---
+
+FRONTEND SKILLS (6)
+-------------------
+Location: ~/.claude/skills/frontend/
+
+1. css-core                - CSS, responsive design, modern layouts
+2. animations-core         - CSS/JS animations, 2D/3D, performance
+3. typescript-core         - TypeScript patterns and best practices
+4. javascript-core         - JavaScript fundamentals and patterns
+5. ui-ux-core              - UI/UX design principles
+6. seo-keyword-research-core - SEO keyword intelligence and research
+
+---
+
+MOBILE SKILLS (3)
+-----------------
+Location: ~/.claude/skills/mobile/
+
+1. kotlin-core     - Kotlin Android development
+2. android-xml-ui  - Android XML UI layouts
+3. swiftui-core    - SwiftUI iOS development
+
+---
+
+DEVOPS SKILLS (3)
+-----------------
+Location: ~/.claude/skills/devops/
+
+1. docker           - Dockerfiles, Compose, optimization, security
+2. kubernetes       - K8s deployments, services, ingress, network policies
+3. jenkins-pipeline - CI/CD pipelines, Docker/K8s integration
+
+---
+
+DESKTOP SKILLS (1)
+------------------
+Location: ~/.claude/skills/desktop/
+
+1. javafx-ide-designer - JavaFX IDE interface design and implementation
+
+---
+
+INTELLIGENCE/META SKILLS (7)
+----------------------------
+Location: ~/.claude/skills/ (root)
+
+1. adaptive-skill-intelligence    - Auto-detects and creates skills on-the-fly
+2. context-management-core        - Context validation, optimization, caching
+3. model-selection-core           - Haiku/Sonnet/Opus model selection rules
+4. task-planning-intelligence     - Task breakdown and planning
+5. phased-execution-intelligence  - Phased execution management
+6. memory-enforcer                - Memory system enforcement
+7. migration                      - Framework/database migration expert
+
+---
+
+SKILL STRUCTURE
+---------------
+
+Each skill folder should contain:
+```
+skill-name/
+├── skill.md       # Main skill file (required)
+├── README.md      # Skill documentation
+└── *.md           # Additional resources (optional)
+```
+
+---
+
+SYMLINKS
+--------
+
+Root-level symlinks for quick access:
+- animations-core      -> frontend/animations-core/
+- css-core             -> frontend/css-core/
+- docker               -> devops/docker/
+- java-design-patterns-core -> backend/java-design-patterns-core/
+- java-spring-boot-microservices -> backend/java-spring-boot-microservices/
+- jenkins-pipeline     -> devops/jenkins-pipeline/
+- kubernetes           -> devops/kubernetes/
+- nosql-core           -> backend/nosql-core/
+- rdbms-core           -> backend/rdbms-core/
+- seo-keyword-research-core -> frontend/seo-keyword-research-core/
+- spring-boot-design-patterns-core -> backend/spring-boot-design-patterns-core/
+
+---
+
+VERSION HISTORY
+---------------
+
+| Version | Date       | Changes                                    |
+|---------|------------|-------------------------------------------|
+| 1.0.0   | 2026-02-18 | Initial versioning, INDEX.md created      |
+|         |            | Desktop category added, payment-integration |
+|         |            | javafx-ide-designer skill added           |
+
+---
+
+Full Index: See INDEX.md
+Last Updated: 2026-02-18

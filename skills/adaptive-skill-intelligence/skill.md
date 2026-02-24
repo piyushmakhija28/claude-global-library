@@ -89,53 +89,122 @@ Update memory registry
 
 ## Existing Skills/Agents Discovery (MANDATORY FIRST STEP)
 
-### Before Creating Anything, ALWAYS Check:
+### ⚠️ CRITICAL: Use INDEX.md as Source of Truth
+
+**Location:** `~/.claude/skills/INDEX.md`
+
+This is the AUTHORITATIVE SOURCE for all available skills. ALWAYS check this file first!
+
+```
+Backend Skills:
+  ✓ java-spring-boot-microservices (Spring Boot REST APIs)
+  ✓ java-design-patterns-core (Java design patterns)
+  ✓ spring-boot-design-patterns-core (Spring Boot patterns)
+  ✓ rdbms-core (PostgreSQL/MySQL)
+  ✓ nosql-core (MongoDB, Elasticsearch)
+  ✓ swift-backend-core (Swift backend)
+  ✓ payment-integration (Stripe, Razorpay, PayPal)
+  ✓ json-core (JSON handling)
+
+Frontend Skills:
+  ✓ css-core (CSS, responsive design)
+  ✓ animations-core (CSS/JS animations)
+  ✓ typescript-core (TypeScript patterns)
+  ✓ javascript-core (JavaScript fundamentals)
+  ✓ ui-ux-core (UI/UX design)
+  ✓ seo-keyword-research-core (SEO keywords)
+
+Mobile Skills:
+  ✓ kotlin-core (Android development)
+  ✓ android-xml-ui (Android XML layouts)
+  ✓ swiftui-core (iOS development)
+
+DevOps Skills:
+  ✓ docker (Dockerfiles, Compose)
+  ✓ kubernetes (K8s deployments)
+  ✓ jenkins-pipeline (CI/CD pipelines)
+
+Desktop Skills:
+  ✓ javafx-ide-designer (JavaFX UI design)
+
+System Skills:
+  ✓ python-system-scripting (Python hooks)
+
+Meta Skills:
+  ✓ adaptive-skill-intelligence (THIS SKILL - auto-detection)
+  ✓ context-management-core (Context validation)
+  ✓ model-selection-core (Model selection)
+  ✓ task-planning-intelligence (Task planning)
+  ✓ phased-execution-intelligence (Phase management)
+  ✓ memory-enforcer (Memory enforcement)
+  ✓ migration (Framework migration)
+```
+
+### Symlink Resolution
+
+Skills are stored in category folders with symlinks at root for quick access:
+
+```
+~/.claude/skills/
+├── INDEX.md                                    ← SOURCE OF TRUTH
+├── backend/
+│   ├── java-spring-boot-microservices/
+│   ├── java-design-patterns-core/
+│   └── ...
+├── frontend/
+│   ├── css-core/
+│   ├── animations-core/
+│   └── ...
+├── devops/
+│   ├── docker/
+│   ├── kubernetes/
+│   └── ...
+└── [symlinks at root for quick access]
+    ├── docker → devops/docker/
+    ├── css-core → frontend/css-core/
+    └── ...
+```
+
+**Key Point:** Both symlinks and direct folders are valid. Always check both!
+
+### Discovery Algorithm
 
 ```bash
-# 1. List all existing skills
-ls -la C:\Users\techd\.claude\skills\
+# 1. Read INDEX.md (fast, authoritative)
+read_skills_from_index() {
+    cat ~/.claude/skills/INDEX.md | grep "✓" | awk '{print $2}'
+}
 
-Current existing skills (as of 2026-01-23):
-- animations-core (Frontend animations)
-- context-management-core (Context handling)
-- css-core (CSS management)
-- docker (Docker containerization)
-- java-design-patterns-core (Java patterns)
-- java-spring-boot-microservices (Spring Boot microservices)
-- jenkins-pipeline (CI/CD Jenkins)
-- kubernetes (K8s orchestration)
-- model-selection-core (Model selection)
-- nosql-core (NoSQL databases)
-- phased-execution-intelligence (Phase management)
-- rdbms-core (RDBMS databases)
-- seo-keyword-research-core (SEO keywords)
-- spring-boot-design-patterns-core (Spring Boot patterns)
-- task-planning-intelligence (Planning decisions)
+# 2. Resolve symlinks to actual paths
+resolve_skill_path(skill_name) {
+    # Try direct folder
+    if [ -d "~/.claude/skills/{category}/{skill_name}" ]; then
+        return "~/.claude/skills/{category}/{skill_name}"
+    fi
 
-# 2. List all existing agents
-ls -la C:\Users\techd\.claude\agents\
+    # Try symlink at root
+    if [ -L "~/.claude/skills/{skill_name}" ]; then
+        realpath "~/.claude/skills/{skill_name}"  # Resolve to actual path
+    fi
 
-Current existing agents (as of 2026-01-23):
-- android-backend-engineer (Android backend logic)
-- android-ui-designer (Android XML UI)
-- angular-engineer (Angular applications)
-- devops-engineer (CI/CD, deployment)
-- dynamic-seo-agent (Dynamic SEO for SPAs)
-- orchestrator-agent (Multi-agent coordination)
-- qa-testing-agent (QA and testing)
-- spring-boot-microservices (Spring Boot backend)
-- static-seo-agent (Static website SEO)
-- swift-backend-engineer (Swift backend)
-- swiftui-designer (SwiftUI design)
-- ui-ux-designer (UI/UX design)
+    # Not found
+    return NULL
+}
+
+# 3. Verify skill.md exists at resolved path
+verify_skill(path) {
+    [ -f "{path}/skill.md" ]
+}
 ```
 
 ### ⚠️ CRITICAL RULES:
-1. **ALWAYS** check existing skills/agents BEFORE creating new ones
-2. **NEVER** create duplicates
-3. **NEVER** delete pre-existing skills/agents (created before this session)
-4. **ONLY** create if genuinely needed and no existing match
-5. **PREFER** using existing over creating new
+1. **ALWAYS** check `~/.claude/skills/INDEX.md` first (source of truth)
+2. **ALWAYS** resolve symlinks to actual paths using `realpath`
+3. **NEVER** assume path structure (use INDEX.md!)
+4. **NEVER** create duplicates (search INDEX.md first)
+5. **NEVER** delete pre-existing skills/agents
+6. **ONLY** create if genuinely needed and NO existing match
+7. **PREFER** using existing over creating new
 
 ---
 
