@@ -166,24 +166,58 @@ claude-global-library/
 
 ## How to Use
 
-### Skills
-Skills are knowledge modules loaded via Claude Code's Skill tool. Each skill contains patterns, rules, and coding guidance for its domain.
+### Via ImportManager (Recommended)
+
+Use the `ImportManager` utility from claude-insight to load skills and agents:
+
+```python
+from utils.import_manager import ImportManager
+
+# Load a skill
+docker = ImportManager.get_skill('docker')
+kubernetes = ImportManager.get_skill('kubernetes')
+
+# Load an agent
+orchestrator = ImportManager.get_agent('orchestrator-agent')
+devops = ImportManager.get_agent('devops-engineer')
+```
+
+### Via Direct GitHub URL
+
+If not using ImportManager:
+
+```python
+import urllib.request
+
+# GitHub raw URL pattern
+url = "https://raw.githubusercontent.com/piyushmakhija28/claude-global-library/main/skills/{name}/skill.md"
+
+# Example - Load Docker skill
+with urllib.request.urlopen(url.format(name='docker')) as response:
+    skill_content = response.read().decode('utf-8')
+```
+
+### Via Claude Code Skill Tool
+
+Skills are invoked automatically based on task detection or manually:
 
 ```
-# In Claude Code, skills are invoked automatically based on task detection
-# Or manually via: Skill tool with skill="skill-name"
+# In Claude Code, skills auto-detected and invoked
+# Or manually: Skill tool with skill="skill-name"
 ```
 
-### Agents
-Agents are autonomous workers launched via Claude Code's Task tool for complex multi-step workflows.
+### Via Claude Code Task Tool
+
+Agents for complex multi-step workflows:
 
 ```
-# Agents are launched via: Task(subagent_type="agent-name")
+# Agents launched via: Task(subagent_type="agent-name")
 # Example: Task(subagent_type="devops-engineer", prompt="Create K8s deployment")
 ```
 
-### Installation
-Copy skills and agents to your Claude configuration:
+### Local Installation (Optional)
+
+Copy skills and agents locally:
 
 ```bash
 # Copy all skills
@@ -197,11 +231,26 @@ cp -r agents/* ~/.claude/agents/
 
 ## Contributing
 
-1. Skills go in `skills/<category>/<skill-name>/`
-2. Agents go in `agents/<agent-name>/`
-3. Each skill must have a `skill.md` or `SKILL.md`
-4. Each agent must have a `<agent-name>.md`
-5. No project-specific content (business logic, credentials, internal paths)
+### Naming Standards
+
+**Skills:**
+- Location: `skills/<category>/<skill-name>/`
+- File: **`skill.md`** (lowercase, standardized)
+- Pattern: `skills/backend/docker/skill.md`
+
+**Agents:**
+- Location: `agents/<agent-name>/`
+- File: **`agent.md`** (lowercase, standardized)
+- Pattern: `agents/orchestrator-agent/agent.md`
+
+### Guidelines
+
+1. ✅ Skills organized by domain: `backend/`, `frontend/`, `devops/`, `desktop/`, `system/`
+2. ✅ One folder per skill with standardized `skill.md` file
+3. ✅ One folder per agent with standardized `agent.md` file
+4. ✅ No flat duplicates - skills/agents ONLY in their category folders
+5. ✅ No project-specific content (business logic, credentials, internal paths)
+6. ✅ Update `skills/INDEX.md` when adding/removing skills
 
 ---
 

@@ -73,11 +73,54 @@ claude-global-library/
 
 1. **No project-specific content** - No business logic, credentials, internal paths
 2. **Organized by domain** - backend/, frontend/, devops/, desktop/, system/ for skills
-3. **One folder per skill** - Each skill has its own directory with skill.md/SKILL.md
-4. **One folder per agent** - Each agent has its own directory with agent-name.md
-5. **No flat duplicates** - Skills ONLY in their organized folder (not duplicated at root)
-6. **INDEX.md** - skills/INDEX.md must be updated when adding/removing skills
-7. **README.md per category** - Each category (skills/, agents/) has its own README
+3. **Standardized naming** - All skills use `skill.md`, all agents use `agent.md` (lowercase, consistent)
+4. **One folder per skill** - Each skill in its own directory: `skills/<name>/skill.md`
+5. **One folder per agent** - Each agent in its own directory: `agents/<name>/agent.md`
+6. **No flat duplicates** - Skills/agents ONLY in their organized folder (not at root)
+7. **INDEX.md** - `skills/INDEX.md` must be updated when adding/removing skills
+8. **README.md per category** - Each category (skills/, agents/) has its own README
+9. **agents-system/** - Migrated agents from local system (reference only)
+
+---
+
+## IMPORTS & USAGE
+
+### Loading Skills from This Repo
+
+From claude-insight or other projects:
+
+```python
+from utils.import_manager import ImportManager
+
+# Load a skill
+docker = ImportManager.get_skill('docker')
+kubernetes = ImportManager.get_skill('kubernetes')
+java_spring = ImportManager.get_skill('java-spring-boot-microservices')
+```
+
+### Loading Agents from This Repo
+
+```python
+from utils.import_manager import ImportManager
+
+# Load an agent
+orchestrator = ImportManager.get_agent('orchestrator-agent')
+devops = ImportManager.get_agent('devops-engineer')
+qa = ImportManager.get_agent('qa-testing-agent')
+```
+
+### Direct GitHub URLs
+
+If not using ImportManager:
+
+```
+Skills:  https://raw.githubusercontent.com/piyushmakhija28/claude-global-library/main/skills/{name}/skill.md
+Agents:  https://raw.githubusercontent.com/piyushmakhija28/claude-global-library/main/agents/{name}/agent.md
+
+Example:
+https://raw.githubusercontent.com/piyushmakhija28/claude-global-library/main/skills/docker/skill.md
+https://raw.githubusercontent.com/piyushmakhija28/claude-global-library/main/agents/orchestrator-agent/agent.md
+```
 
 ---
 
