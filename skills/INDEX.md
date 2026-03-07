@@ -9,7 +9,7 @@ Skills are organized by domain:
 - **frontend/** - CSS, animations, SEO (3 skills)
 - **devops/** - Docker, Kubernetes, Jenkins (3 skills)
 - **desktop/** - JavaFX and desktop applications (1 skill)
-- **system/** - Python system scripting and automation (1 skill)
+- **system/** - System scripting and automation (3 skills)
 - **mobile/** - Mobile app development (1 skill)
 - **meta/** - Meta-skills for system integration (7 skills)
 
@@ -53,6 +53,8 @@ Skills are organized by domain:
 | Skill | Purpose |
 |-------|---------|
 | **python-system-scripting** | System automation, hooks, daemon scripts, Windows-safe code |
+| **linux-shell-scripting** | Bash/sh scripting, file processing, process management, cron, networking |
+| **powershell-scripting** | PowerShell automation, cmdlets, registry, services, remote management |
 
 ## Mobile Skills
 
@@ -77,7 +79,7 @@ Skills are organized by domain:
 
 ## Total Count
 
-- **21 skills** across 7 categories
+- **23 skills** across 7 categories
 - **13 agents** for autonomous task execution
 - **All standardized** with lowercase `skill.md` naming
 
@@ -117,7 +119,7 @@ git add . && git commit -m "Add my-new-skill" && git push
 
 ---
 
-**Last Updated:** 2026-03-06
-**Total Skills:** 21
+**Last Updated:** 2026-03-07
+**Total Skills:** 23
 **Total Agents:** 13
 **Status:** Fully Organized & Standardized
